@@ -1,0 +1,14 @@
+{
+  "name": "get_version",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Gets Version from Release notes file",
+  "main": "main.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "fs": "^0.0.1-security"
+  }
+}

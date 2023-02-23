@@ -15,14 +15,10 @@ let main = async () => {
     let rvMinor = version[1] || 0;
     let rvPatch = version[2] || 0;
 
-    let returnObj = {
-        version: version.join("."),
-        major: rvMajor,
-        minor: rvMinor,
-        patch: rvPatch
-    }
-
-    setOutput('VERSION', returnObj);
+    setOutput("FULL_VERSION", version.join("."));
+    setOutput("MAJOR", rvMajor);
+    setOutput("MINOR", rvMinor);
+    setOutput("PATCH", rvPatch);
 }
 
 main().then(() => {

@@ -1,0 +1,12 @@
+name: Get Version
+description : Get Version from Release Notes file
+inputs:
+  RELEASE_NOTES_FILE_PATH:
+    description: the path of the release notes file
+    required: yes
+outputs:
+  VERSION:
+    description: The SemVer2 Version
+runs:
+  using: node16
+  main: main.js

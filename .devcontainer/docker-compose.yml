@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  dev_env:
+    image: node:16
+    environment:
+      INPUT_RELEASE_NOTES_FILE_PATH : "/src/testfiles/RELEASE_NOTES.md"
+    command: sleep infinity
+    volumes:
+      - ../:/src
+      - ./testfiles:/src/testfiles
+      

@@ -1,0 +1,9 @@
+{
+	"name": "Get_Version_From_Releaes_notes",
+	// Set the build context one level higher so we can grab metadata like global.json
+    "dockerComposeFile" : [
+        "docker-compose.yml"
+    ],
+    "service" : "dev_env",
+    "workspaceFolder": "/src"
+}

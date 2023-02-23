@@ -9,13 +9,15 @@ const releaseNotesFilePath  = getInput("RELEASE_NOTES_FILE_PATH");
 let main = async () => {
 
     let fileContents = fs.readFileSync(releaseNotesFilePath, "utf-8");
+
+    // maybe put a filecheck here toensure the file exists AND that the format is right.
     let version = fileContents.split(/\r?\n/)[0].split(" ")[1].split(".");
 
     let rvMajor = version[0] || 0;
     let rvMinor = version[1] || 0;
     let rvPatch = version[2] || 0;
 
-    setOutput("FULL_VERSION", version.join("."));
+    setOutput("FULL_VERSION", `${rvMajor}.${rvMinor}.${rvPatch}`);
     setOutput("MAJOR", rvMajor);
     setOutput("MINOR", rvMinor);
     setOutput("PATCH", rvPatch);

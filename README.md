@@ -15,13 +15,11 @@ Get Release version from Release Notes file
 
 ## Output
 
-```json
-{
-    "version": "3.0.0",
-    "major": 3,
-    "minor": 0,
-    "patch": 0
-}
+```javascript
+    setOutput("FULL_VERSION", `${rvMajor}.${rvMinor}.${rvPatch}`);
+    setOutput("MAJOR", rvMajor);
+    setOutput("MINOR", rvMinor);
+    setOutput("PATCH", rvPatch);
 ```
 
 ## Action Usage
@@ -35,11 +33,11 @@ Get Release version from Release Notes file
 
 -   name: Use the Version somehow
     env: 
-        VERSION: ${{ fromJSON(steps.VERSION.outputs.VERSION) }}
-    run: echo "Im using the version ${{ env.VERSION.version }}"
+        VERSION: ${{ steps.VERSION.outputs }}
+    run: echo "Im using the version ${{ env.VERSION.FULL_VERSION }}"
 
 -   name: Use the Version Major Part
     env: 
-        VERSION: ${{ fromJSON(steps.VERSION.outputs.VERSION) }}
-    run: echo "Im using the version major part ${{ env.VERSION.major }}"
+        VERSION: ${{ steps.VERSION.outputs }}
+    run: echo "Im using the version major part ${{ env.VERSION.MAJOR }}"
 ```

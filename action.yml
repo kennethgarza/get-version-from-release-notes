@@ -1,4 +1,4 @@
-name: Get Version
+name: Get SemVer Version from Release Notes file
 description : Get Version from Release Notes file
 inputs:
   RELEASE_NOTES_FILE_PATH:

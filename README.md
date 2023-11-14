@@ -26,7 +26,7 @@ Get Release version from Release Notes file
 
 ```yaml
 -   name: Get Version
-    uses: kennethgarza/get-version-from-release-notes@v1.1.1``
+    uses: kennethgarza/get-version-from-release-notes@{version}``
     with:
         RELEASE_NOTES_FILE_PATH     : ./RELEASE_NOTES.md
     id: VERSION

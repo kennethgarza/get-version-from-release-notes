@@ -26,18 +26,14 @@ Get Release version from Release Notes file
 
 ```yaml
 -   name: Get Version
-    uses: version_token_module_link
+    uses: kennethgarza/get-version-from-release-notes@v1.1.1``
     with:
         RELEASE_NOTES_FILE_PATH     : ./RELEASE_NOTES.md
     id: VERSION
 
 -   name: Use the Version somehow
-    env: 
-        VERSION: ${{ steps.VERSION.outputs }}
-    run: echo "Im using the version ${{ env.VERSION.FULL_VERSION }}"
+    run: echo "Im using the version ${{ steps.VERSION.outputs.FULL_VERSION }}"
 
 -   name: Use the Version Major Part
-    env: 
-        VERSION: ${{ steps.VERSION.outputs }}
-    run: echo "Im using the version major part ${{ env.VERSION.MAJOR }}"
+    run: echo "Im using the version major part ${{ steps.VERSION.outputs.MAJOR }}"
 ```
